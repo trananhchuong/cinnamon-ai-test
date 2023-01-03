@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import * as palette from "../constants/VariablesStyles";
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -8,7 +9,25 @@ const GlobalStyle = createGlobalStyle`
 	font-family: 'Montserrat', sans-serif;
   }
 
-  html { font-size: 10px; }
+
+html {
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: $text-color;
+  background-color: ${palette.BG_COLOR};
+  font-size: 1.6rem;
+}
+
+.App{
+  width: 100vw;
+}
 
 `;
 
