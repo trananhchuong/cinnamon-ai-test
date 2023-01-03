@@ -4,10 +4,12 @@ export const TABLE_BORDER_COLOR = "#edeef2";
 export const ACTIVE_COLOR = "#25be64";
 export const INACTIVE_COLOR = "#dadde4";
 export const NEW_COLOR = "#febf02";
-export const TEXT_COLOR = "#141a4e";
+export const TEXT_COLOR = "#5698DB";
 export const TABLE_HEAD_BG_COLOR = "#e1e8f2";
-export const HOVER_BG_COLOR = "#fb4f83";
-export const HOVER_TEXT_COLOR = "#ffffff";
+export const HOVER_BG_COLOR = "#EDF8FE";
+export const HOVER_TEXT_COLOR = "#5698DB";
+export const TEXT_SECONDARY_COLOR = "#171922";
+
 
 
 const size = {
@@ -23,3 +25,12 @@ export const device = {
   tabletToDesktop: `(min-width: ${size.tablet}) and (max-width: ${size.desktop})`,
 };
 
+export const titleSize = {
+  L: "2.4rem",
+  M: "1.4rem",
+};
+
+export const titleLineHeight = {
+  L: "33",
+  M: "19",
+};

@@ -3,17 +3,13 @@ import { Container } from "../../styles/globalStyles";
 
 export const Nav = styled.nav`
   background: #fff;
-  margin-bottom: -60px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  position: absolute;
-  top: 0;
   z-index: 50;
   width: 100%;
-
   transition: background-color 0.3s ease-in;
 `;
 
@@ -33,12 +29,11 @@ export const NavLogo = styled.a`
   z-index: 50;
   max-width: 150px;
 
-  img{
+  img {
     width: 150px;
     height: 30px;
     object-fit: contain;
   }
-
 `;
 
 export const NavIcon = styled.img`
@@ -84,12 +79,6 @@ export const NavMenu = styled.ul`
     transform: translateY(${({ show }) => (show ? "0" : "-10px")});
     transition: opacity 0.5s ease;
     background-color: #071c2f;
-  }
-
-  ${
-    "" /* > li:first-child {
-		margin-left: auto;
-	} */
   }
 `;
 

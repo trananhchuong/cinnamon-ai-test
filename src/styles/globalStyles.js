@@ -15,12 +15,9 @@ html {
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
-  color: $text-color;
+  color: ${palette.TEXT_COLOR};
   background-color: ${palette.BG_COLOR};
   font-size: 1.6rem;
 }

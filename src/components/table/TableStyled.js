@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import * as palette from "../constants/VariablesStyles";
+import * as palette from "../../constants/VariablesStyles";
 
 export const TableStyled = styled.div`
   /* Page Wrapper/Container Style */
@@ -25,7 +25,7 @@ export const TableStyled = styled.div`
       padding: 0 1.5rem;
 
       @media ${palette.device.minTablet} {
-        grid-template-columns: 2fr 1fr 2fr 2fr 1fr;
+        grid-template-columns: 0.5fr 0.5fr 2fr 2fr 1fr;
       }
 
       @media ${palette.device.tabletToDesktop} {
@@ -49,6 +49,12 @@ export const TableStyled = styled.div`
         align-items: center;
         font-weight: 500;
         text-transform: capitalize;
+        color: ${palette.TEXT_SECONDARY_COLOR};
+        font-size: ${palette.titleSize.M};
+
+        &--actions {
+          justify-content: center;
+        }
       }
     }
     &__body {
@@ -122,37 +128,24 @@ export const TableStyled = styled.div`
     }
   }
 
-  /* SVG Up Arrow Style */
-  .up-arrow {
-    height: 100%;
-    max-height: 1.8rem;
-    margin-left: 1rem;
+  .actions__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    .seperate {
+      height: 2rem;
+      width: 2px;
+      background: silver;
+      margin: 0 12px;
+    }
   }
 
-  /* SVG User Icon Style */
-  .user-icon {
-    width: 100%;
-    max-width: 4rem;
-    height: auto;
-    margin-right: 1rem;
-  }
 
-  /* Status Indicator Style */
-  .status-indicator {
-    display: inline-block;
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 50%;
-    background: #222222;
-    margin-right: 0.5rem;
-    &--active {
-      background: $active-color;
-    }
-    &--inactive {
-      background: $inactive-color;
-    }
-    &--new {
-      background: $new-color;
-    }
+  .checkbox-input{
+    cursor: pointer;
+    width: 2.2rem;
+    height: 2.2rem;
   }
 `;
