@@ -14,9 +14,10 @@ function TableComponent(props) {
     listUser,
     isLoadingGlobal,
     updateIsCheckedUser,
-    setIsCheckedAll,
     isCheckedAll,
     getListUsers,
+    setIsCheckedAll,
+    removeUsersIsChecked,
   } = useContext(AppContext);
 
   const getSelectedCount = (listUser) => {
@@ -40,7 +41,12 @@ function TableComponent(props) {
   const renderNavBarSelected = () => {
     if (countSelected == 0) return <div />;
 
-    return <NavbarSelected count={countSelected} />;
+    return (
+      <NavbarSelected
+        count={countSelected}
+        removeUsersIsChecked={removeUsersIsChecked}
+      />
+    );
   };
 
   const renderNoneData = () => {

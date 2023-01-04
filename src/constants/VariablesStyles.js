@@ -1,4 +1,4 @@
-export const BG_COLOR = "#f2f6f9";
+export const BG_COLOR = "#F7FAFC";
 export const TABLE_BG_COLOR = "#fefefe";
 export const TABLE_BG_COLOR_ACTIVE = "#EDF8FE";
 export const TABLE_BORDER_COLOR = "#edeef2";

@@ -18,7 +18,6 @@ export const TableStyled = styled.div`
     background-color: ${palette.TABLE_BG_COLOR};
     border-collapse: collapse;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.02);
     width: 100%;
     margin: 2rem 0;
     overflow: hidden;
@@ -37,11 +36,11 @@ export const TableStyled = styled.div`
 
       th,
       td {
-        padding: 1rem;
+        padding: 1.8rem;
       }
     }
     &__head {
-      background-color: ${palette.TABLE_HEAD_BG_COLOR};
+      background-color: ${palette.HOVER_BG_COLOR};
 
       @media ${palette.device.desktop} {
         display: none;
@@ -64,6 +63,7 @@ export const TableStyled = styled.div`
       .responsive-table__row {
         transition: 0.1s linear;
         transition-property: color, background;
+        
         &:last-child {
           border-bottom: none;
         }
@@ -79,6 +79,8 @@ export const TableStyled = styled.div`
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        font-size: ${palette.titleSize.M};
+
         &::before {
           margin-right: 1rem;
           font-weight: 600;

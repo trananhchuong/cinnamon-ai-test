@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { SELECTED_BG_COLOR, TEXT_THIRD_COLOR } from "../../constants/VariablesStyles";
+import {
+  SELECTED_BG_COLOR,
+  TEXT_THIRD_COLOR,
+} from "../../constants/VariablesStyles";
 
 export const NavbarSelectedStyled = styled.div`
   display: flex;
@@ -31,6 +34,18 @@ export const NavbarSelectedStyled = styled.div`
       width: 2px;
       background: silver;
       margin: 0 12px;
+    }
+  }
+
+  .selected__box {
+    display: flex;
+    align-items: center;
+
+    .icon-remove {
+      width: 20px;
+      height: 20px;
+      margin-left: 6px;
+      cursor: pointer;
     }
   }
 `;

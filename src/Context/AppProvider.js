@@ -127,6 +127,21 @@ export const AppProvider = ({ children }) => {
     }
   };
 
+  const removeUsersIsChecked = () => {
+    let newListUser = structuredClone(listUser);
+    newListUser = newListUser.map((user) => {
+      if (user.isChecked) {
+        user.isChecked = false;
+      }
+
+      return {
+        ...user,
+      };
+    });
+    setListUser(newListUser);
+    setIsCheckedAll(false);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -138,6 +153,7 @@ export const AppProvider = ({ children }) => {
         setSearchText,
         searchText,
         getListUsers,
+        removeUsersIsChecked,
       }}
     >
       {children}
