@@ -3,7 +3,7 @@ import { Container } from "../../styles/globalStyles";
 
 export const Nav = styled.nav`
   background: #fff;
-  height: 60px;
+  height: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,11 +27,11 @@ export const NavLogo = styled.a`
   display: flex;
   align-items: center;
   z-index: 50;
-  max-width: 150px;
+  max-width: 15rem;
 
   img {
-    width: 150px;
-    height: 30px;
+    width: 15rem;
+    height: 3rem;
     object-fit: contain;
   }
 `;
@@ -83,7 +83,7 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavItem = styled.li`
-  height: 80px;
+  height: 8rem;
   cursor: pointer;
 
   @media screen and (max-width: 960px) {
