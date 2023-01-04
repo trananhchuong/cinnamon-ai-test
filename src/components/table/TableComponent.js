@@ -3,8 +3,9 @@ import { AppContext } from "../../Context/AppProvider";
 import Checked from "../checked/Checked";
 import NavbarSelected from "../navBarSelected/NavbarSelected";
 import RowComponent from "./RowComponent";
-import { NoneDataStyled, TableStyled } from "./TableStyled";
+import { LoadingBoxStyled, NoneDataStyled, TableStyled } from "./TableStyled";
 import classNames from "classnames";
+import CircleLoading from "../loading/CircleLoading";
 
 TableComponent.propTypes = {};
 
@@ -54,6 +55,14 @@ function TableComponent(props) {
       </NoneDataStyled>
     );
   };
+
+  if (isLoadingGlobal) {
+    return (
+      <LoadingBoxStyled>
+        <CircleLoading />
+      </LoadingBoxStyled>
+    );
+  }
 
   return (
     <TableStyled

@@ -193,3 +193,10 @@ export const NoneDataStyled = styled.div`
     }
   }
 `;
+export const LoadingBoxStyled = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+`;

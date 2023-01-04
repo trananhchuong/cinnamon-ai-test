@@ -1,13 +1,11 @@
-import React, { useState, useContext, useEffect, useCallback } from "react";
-import PropTypes from "prop-types";
+import React, { useContext } from "react";
+import { AppContext } from "../../Context/AppProvider";
 import {
   SearchContainer,
   SearchContent,
   SearchWrap,
-  Title,
+  Title
 } from "./SearchStyled";
-import useDebounce from "../../hooks/useDebounce";
-import { AppContext } from "../../Context/AppProvider";
 
 Search.propTypes = {};
 
