@@ -7,7 +7,10 @@ export const TableStyled = styled.div`
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
-    padding: 0 15px;
+  }
+
+  &.padding-bottom {
+    padding-bottom: 48px;
   }
 
   /* Responsive Table Style */
@@ -68,6 +71,9 @@ export const TableStyled = styled.div`
           color: $hover-text-color;
           background-color: ${palette.HOVER_BG_COLOR};
         }
+        &.is-active {
+          background-color: ${palette.TABLE_BG_COLOR_ACTIVE};
+        }
       }
       &__text {
         display: flex;
@@ -109,8 +115,21 @@ export const TableStyled = styled.div`
         &--status,
         &--types,
         &--update {
+          a {
+            text-decoration: none;
+            color: ${palette.TEXT_COLOR};
+          }
+
           @media ${palette.device.tabletToDesktop} {
             grid-column: 2/ 3;
+          }
+
+          img.avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 14px;
+            object-fit: cover;
           }
         }
         &--country {
@@ -134,6 +153,10 @@ export const TableStyled = styled.div`
     justify-content: center;
     flex: 1;
 
+    img {
+      cursor: pointer;
+    }
+
     .seperate {
       height: 2rem;
       width: 2px;
@@ -142,8 +165,7 @@ export const TableStyled = styled.div`
     }
   }
 
-
-  .checkbox-input{
+  .checkbox-input {
     cursor: pointer;
     width: 2.2rem;
     height: 2.2rem;
