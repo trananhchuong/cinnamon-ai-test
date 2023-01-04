@@ -3,7 +3,7 @@ import { AppContext } from "../../Context/AppProvider";
 import Checked from "../checked/Checked";
 import NavbarSelected from "../navBarSelected/NavbarSelected";
 import RowComponent from "./RowComponent";
-import { TableStyled } from "./TableStyled";
+import { NoneDataStyled, TableStyled } from "./TableStyled";
 import classNames from "classnames";
 
 TableComponent.propTypes = {};
@@ -15,6 +15,7 @@ function TableComponent(props) {
     updateIsCheckedUser,
     setIsCheckedAll,
     isCheckedAll,
+    getListUsers,
   } = useContext(AppContext);
 
   const getSelectedCount = (listUser) => {
@@ -39,6 +40,19 @@ function TableComponent(props) {
     if (countSelected == 0) return <div />;
 
     return <NavbarSelected count={countSelected} />;
+  };
+
+  const renderNoneData = () => {
+    return (
+      <NoneDataStyled>
+        <div className="data-none__box">
+          None Data
+          <div className="fetch-data" onClick={getListUsers}>
+            Reload data default
+          </div>
+        </div>
+      </NoneDataStyled>
+    );
   };
 
   return (
@@ -72,23 +86,25 @@ function TableComponent(props) {
           </tr>
         </thead>
         <tbody className="responsive-table__body">
-          {listUser.map((item, index) => {
-            const { avatar_url, html_url, login, isChecked, id } = item;
+          {listUser.length === 0
+            ? renderNoneData()
+            : listUser.map((item, index) => {
+                const { avatar_url, html_url, login, isChecked, id } = item;
 
-            return (
-              <React.Fragment key={id}>
-                <RowComponent
-                  updateIsCheckedUser={updateIsCheckedUser}
-                  no={index + 1}
-                  name={login}
-                  avatarUrl={avatar_url}
-                  blogUrl={html_url}
-                  isChecked={isChecked}
-                  id={id}
-                />
-              </React.Fragment>
-            );
-          })}
+                return (
+                  <React.Fragment key={id}>
+                    <RowComponent
+                      updateIsCheckedUser={updateIsCheckedUser}
+                      no={index + 1}
+                      name={login}
+                      avatarUrl={avatar_url}
+                      blogUrl={html_url}
+                      isChecked={isChecked}
+                      id={id}
+                    />
+                  </React.Fragment>
+                );
+              })}
         </tbody>
       </table>
       {renderNavBarSelected()}

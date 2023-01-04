@@ -171,3 +171,25 @@ export const TableStyled = styled.div`
     height: 2.2rem;
   }
 `;
+
+export const NoneDataStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 30rem;
+
+  .data-none__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .fetch-data {
+      margin-top: 14px;
+      border: thin solid ${palette.SELECTED_BG_COLOR};
+      padding: 5px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+`;

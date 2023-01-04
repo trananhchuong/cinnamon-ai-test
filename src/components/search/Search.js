@@ -1,25 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import {
-  ImageSearch,
-  InputSearch,
   SearchContainer,
   SearchContent,
   SearchWrap,
   Title,
 } from "./SearchStyled";
+import useDebounce from "../../hooks/useDebounce";
+import { AppContext } from "../../Context/AppProvider";
 
 Search.propTypes = {};
 
-function Search(props) {
-  const [searchVal, setSearchVal] = useState("");
+function Search() {
+  const { searchText, setSearchText } = useContext(AppContext);
 
   const handleInput = (e) => {
-    setSearchVal(e.target.value);
-  };
-
-  const handleClearBtn = () => {
-    setSearchVal("");
+    setSearchText(e?.target?.value);
   };
 
   return (
@@ -31,7 +27,7 @@ function Search(props) {
           <img src="/assets/search_icon.svg" alt={`images search`} />
           <input
             onChange={handleInput}
-            value={searchVal}
+            value={searchText}
             type="text"
             name="product-search"
             placeholder="Search..."
